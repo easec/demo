@@ -1,0 +1,25 @@
+Kubernetes
+
+kubectl get nodes
+
+kubectl get pods --all-namespaces
+
+kubectl create deployment min-app --image=easec/php-webb
+
+kubectl get pods
+
+kubectl expose deployment min-app --port=80 --target-port=80 --name=min-appl --type NodePort
+
+kubectl get svc
+
+kubectl describe services
+
+kubectl get pods -o wide
+
+kubectl scale deployment min-app --replicas=6
+
+kubectl get pods -o wide
+
+kubectl scale deployment min-app --replicas=1
+
+kubectl delete deplyment min-app
