@@ -6,20 +6,22 @@ Shell   export MIN_ZON=europe-north1-a
 
 gcloud container clusters create webbfronten --zone $MIN_ZON --num-nodes 2
 
-kubectl create deployment nginx --image=nginx:latest
+kubectl get nodes
+
+kubectl create deployment min-app --image=registry.hub.docker.com/easec/php-webb
 
 kubectl get pods
 
-kubectl expose deployment nginx --port 80 --type LoadBalancer
+kubectl expose deployment min-app --port 80 --type LoadBalancer
 
 kubectl get services
 
-kubectl scale deployment nginx --replicas 4
+kubectl scale deployment min-app --replicas 4
 
 kubectl get pods -o wide
 
-kubectl delete deployment nginx
+kubectl delete deployment min-app
 
-kubectl delete service nginx
+kubectl delete service min-app
 
 gcloud container clusters delete webbfronten --zone $MIN_ZON
