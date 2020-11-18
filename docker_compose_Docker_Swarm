@@ -1,0 +1,32 @@
+
+git clone https://github.com/easec/composetest
+
+docker-compose up
+
+docker-compose down
+
+nano docker-compose.yml
+
+Efter 5000:5000, klicka på Enter, lägg till volumes: ny rad - .:/code
+
+docker-compose up
+
+Ändra
+
+docker-compose down
+
+============================================================================
+
+Docker Swarm
+
+docker swarm init --advertise-addr 192.168.1.21
+
+Anslut de andra noderna
+
+docker node ls
+
+docker service create --name webb -p 80:80 easec/php-webb
+
+docker service ls
+
+docker service scale webb=4
