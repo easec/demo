@@ -1,0 +1,41 @@
+Docker, historik, kommando, Dockerfile
+
+
+docker pull centos
+
+docker images
+
+docker run -it centos
+
+docker run -d -p 80:80 --name webb easec/php-webb
+
+docker diff webb
+
+docker stop webb
+
+docker ps
+
+docker ps -a
+
+docker ps -l
+
+docker ps -s
+
+docker rm webb
+
+docker rmi easec/php-webb --force
+
+
+======================================================================
+
+Dockerfile
+
+git clone https://github.com/easec/catweb
+
+docker build -t catwebmj:latest .
+
+docker run -d -p 5000:5000 --name catweb catwebmj
+
+docker stop catweb
+
+docker rm catweb
