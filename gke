@@ -1,0 +1,25 @@
+https://console.cloud.google.com 
+
+APIs & Services - Dashboard    Kubernetes Engine API, Google Container Registry API 
+
+Shell   export MIN_ZON=europe-north1-a
+
+gcloud container clusters create webbfronten --zone $MIN_ZON --num-nodes 2
+
+kubectl create deployment nginx --image=nginx:latest
+
+kubectl get pods
+
+kubectl expose deployment nginx --port 80 --type LoadBalancer
+
+kubectl get services
+
+kubectl scale deployment nginx --replicas 4
+
+kubectl get pods -o wide
+
+kubectl delete deployment nginx
+
+kubectl delete service nginx
+
+gcloud container clusters delete webbfronten --zone $MIN_ZON
